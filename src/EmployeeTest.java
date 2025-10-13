@@ -15,7 +15,7 @@ public class EmployeeTest {
         for (int i = 0; i < increments; i++) employees[0].incAge();
 
         for (Employee employee : employees) {
-            System.out.println("Last name: " + employee.getName() + ", Age: " + employee.getAge());
+            System.out.println("Name: " + employee.getName() + ", Age: " + employee.getAge());
         }
     }
 }
