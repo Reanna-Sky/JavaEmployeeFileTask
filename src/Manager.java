@@ -21,7 +21,7 @@ public class Manager extends Employee {
         StringBuilder namesList = new StringBuilder();
         for (Employee employee : manages) {
             if (employee != null) {
-                namesList.append(employee.getName());
+                namesList.append(employee.getDetails());
                 namesList.append(", ");
             }
         }
