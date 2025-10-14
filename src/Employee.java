@@ -26,4 +26,12 @@ public class Employee {
     // Getters
     public String getName() {return firstName + " " + lastName;}
     public int getAge() {return age;}
+
+    public String getDetails(){
+        StringBuilder employeeDetails = new StringBuilder();
+        employeeDetails.append(this.getName());
+        employeeDetails.append(", ");
+        employeeDetails.append(this.getAge());
+        return employeeDetails.toString();
+    }
 }
