@@ -31,16 +31,15 @@ public class Employee {
         return this.getName() + ", " + this.getAge();
     }
 //    nested class - subclass of exception.
-    public class UnderAgeException extends Exception{
-
-        private int age:
+    public static class UnderAgeException extends Exception{
+        private int age;
 
 //        this is a constructor
         public UnderAgeException(int age, String message){
             super(message);
             this.age = age;
         }
-        
+
         public int getAge() {return this.age;}
     }
 

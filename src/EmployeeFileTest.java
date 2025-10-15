@@ -9,13 +9,13 @@ public class EmployeeFileTest {
             inputEmployee();
             showEmployees();
 //            We are naming the exception as e
+        }catch(Employee.UnderAgeException e){
+            System.out.println(e.getMessage());
         }catch(FileNotFoundException e) {
             System.out.println("Invalid file name.");
         }catch (IOException e ){
             System.out.println("Problem with file handling");
         }
-
-
     }
 
     public static String getInput(String prompt) throws IOException {
@@ -27,7 +27,7 @@ public class EmployeeFileTest {
 
     }
 //    Asks for employees details
-    public static void inputEmployee() throws IOException {
+    public static void inputEmployee() throws IOException, Employee.UnderAgeException {
         String firstName = getInput("Enter the Employees first name: ");
         String lastName = getInput("Enter the Employees last name: ");
         String name = firstName + " " + lastName;
@@ -35,6 +35,10 @@ public class EmployeeFileTest {
 
         try {
             int age = Integer.parseInt(strAge);
+
+            if (age < 18){
+                throw new Employee.UnderAgeException(age, "Age is below 18");
+            }
         }catch (NumberFormatException e) {
             System.out.println(e.getMessage() + " is an invalid age!");
         }
