@@ -24,11 +24,14 @@ public class EmployeeFileTest {
     public static void inputEmployee() throws IOException {
         String firstName = getInput("Enter the Employees first name: ");
         String lastName = getInput("Enter the Employees last name: ");
-
         String name = firstName + " " + lastName;
-
         String strAge = getInput("Enter the Employees age: ");
-        int age = Integer.parseInt(strAge);
+
+        try {
+            int age = Integer.parseInt(strAge);
+        }catch (NumberFormatException e) {
+            System.out.println(e.getMessage() + " is an invalid age!");
+        }
 
 
     }
