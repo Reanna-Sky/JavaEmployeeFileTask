@@ -1,7 +1,4 @@
-import java.io.BufferedReader;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 
 public class EmployeeFileTest {
 
@@ -10,10 +7,15 @@ public class EmployeeFileTest {
     public static void main(String[] args) {
         try {
             inputEmployee();
+            showEmployees();
 //            We are naming the exception as e
+        }catch(FileNotFoundException e) {
+            System.out.println("Invalid file name.");
         }catch (IOException e ){
             System.out.println("Problem with file handling");
         }
+        
+
     }
 
     public static String getInput(String prompt) throws IOException {
