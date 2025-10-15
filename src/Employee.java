@@ -28,10 +28,20 @@ public class Employee {
     public int getAge() {return age;}
 
     public String getDetails(){
-        StringBuilder employeeDetails = new StringBuilder();
-        employeeDetails.append(this.getName());
-        employeeDetails.append(", ");
-        employeeDetails.append(this.getAge());
-        return employeeDetails.toString();
+        return this.getName() + ", " + this.getAge();
     }
+//    nested class - subclass of exception.
+    public class UnderAgeException extends Exception{
+
+        private int age:
+
+//        this is a constructor
+        public UnderAgeException(int age, String message){
+            super(message);
+            this.age = age;
+        }
+        
+        public int getAge() {return this.age;}
+    }
+
 }
